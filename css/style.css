@@ -18,6 +18,10 @@ body {
   color: #828282;
   background: #fff;
 }
+.position-overlay{
+  position: relative;
+  top: 30%;
+}
 
 #page {
   position: relative;
@@ -2338,3 +2342,6 @@ fadeIn {  from {
 }
 
 /*# sourceMappingURL=style.css.map */
+.lg-icon{
+  background: beige;
+}
