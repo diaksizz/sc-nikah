@@ -3,26 +3,22 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>The Wedding of Rehan & Maulidan</title>
+	<title>The Wedding of Okta & Yusma</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="The Wedding of Rehan and Maulidan" />
+	<meta name="description" content="The Wedding of Okta dan Yusma" />
 	<meta name="keywords" content="wedding, wedding invitation, invitation, the wedding" />
-	<meta name="author" content="Rehan & Maulidan" />
+	<meta name="author" content="Okta & Yusma" />
 
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="The Wedding of Rehan and Maulidan"/>
+	<meta property="og:title" content="The Wedding of Okta dan Yusma"/>
 	<meta property="og:image" content="images/readme/half%20circle-200.png"/>
-	<meta property="og:url" content="https://ngodingsolusi.github.io/the-wedding-of-rehan-maulidan/"/>
-	<meta property="og:site_name" content="The Wedding of Rehan and Maulidan"/>
-	<meta property="og:description" content="The Wedding of Rehan and Maulidan. Open source wedding invitation"/>
+	<meta property="og:site_name" content="The Wedding of Okta dan Yusma"/>
+	<meta property="og:description" content="The Wedding of Okta dan Yusma. Open source wedding invitation"/>
 
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@ngodingsolusi" />
-	<meta name="twitter:creator" content="@ngodingsolusi" />
-	<meta name="twitter:title" content="The Wedding of Rehan and Maulidan" />
-	<meta name="twitter:description" content="Open Source Wedding Invitation. The Wedding of Rehan and Maulidan" />
+	<meta name="twitter:title" content="The Wedding of Okta dan Yusma" />
+	<meta name="twitter:description" content="Open Source Wedding Invitation. The Wedding of Okta dan Yusma" />
 	<meta name="twitter:image" content="images/readme/half%20circle-200.png" />
-	<meta name="twitter:url" content="https://ngodingsolusi.github.io/the-wedding-of-rehan-maulidan/" />
 
 	<link rel="icon" href="images/cropped_image.png">
 
@@ -475,41 +471,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
 
 <script>
-	day = 11; month = 8; year = 2024;
-	hour = 9; minute = 0;
-	var d = new Date(year, month, day, hour, minute, 0, 0);
+	var today = new Date();
+    var targetDate = new Date(today);
+    targetDate.setDate(today.getDate() + 46);
 
-	// default example
-	simplyCountdown('.simply-countdown-wedding', {
-		year: d.getFullYear(),
-		month: d.getMonth() + 1,
-		day: d.getDate(),
-		hour: d.getHours(),
-		minutes: 0, // Default is 0 [0-59] integer
-		seconds: 0, // Default is 0 [0-59] integer
-		countUp: true
-		// enableUtc: true
-	});
+    // Initialize the simplyCountdown
+    simplyCountdown('.simply-countdown-wedding', {
+        year: targetDate.getFullYear(),
+        month: targetDate.getMonth() + 1, // Month is 0-based in JavaScript
+        day: targetDate.getDate(),
+        hour: targetDate.getHours(),
+        minutes: targetDate.getMinutes(),
+        seconds: 0,
+        countUp: false, // False for countdown
+        // enableUtc: true // Uncomment if you want to use UTC
+    });
 
 	$('#open-invitation').click(function (){
 		$('#overlay').addClass('hide-overlay');
 		togleplay();
 	});
-
-	$.get( "https://api.github.com/repos/ngodingsolusi/the-wedding-of-rehan-maulidan/issues?state=all&per_page", function( data ) {
-		for (let i = 0; i < data.length; i++){
-			const item = `
-				<a class="list-group-item">
-					<div class="name"><span class="strong" style="font-size: 24px">${data[i].user.login}</span> <span class="label label-success">${data[i].labels.length > 0 ? data[i].labels[0].name : 'Tanpa Keterangan'}</span></div>
-					<hr style="margin-top: 0;">
-					<div class="comment">${new showdown.Converter().makeHtml(data[i].body)}</div>
-				</a>
-			`;
-
-			$("#fh5co-testimonial .list-group").append(item);
-		}
-	});
-
 	function scrollToElement(el) {
 		$("html, body").animate({ scrollTop: $(`#${el}`).offset().top }, 1000);
 	}
