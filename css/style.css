@@ -226,6 +226,10 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff !important;
 }
 
+.bni-icon{
+  width: 100%;
+  max-width: 90px;
+}
 #fh5co-counter,
 #fh5co-event,
 .fh5co-bg {
@@ -240,6 +244,10 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
   float: left;
   position: relative;
+}
+#margincont{
+  margin-top: 40px;
+  margin-bottom: 55px;
 }
 
 .fh5co-video {
@@ -469,6 +477,14 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-header .fh5co-heading {
   margin-bottom: 10px;
 }
+#headerh1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-weight: normal;
+  color: #113468;
+  font-family: "Satisfy", Arial, serif;
+}
 #fh5co-header .couple-main {
   width: 400px;
 }
@@ -476,14 +492,6 @@ h1, h2, h3, h4, h5, h6, figure {
   #fh5co-header .couple-main {
     width: 250px;
   }
-}
-#fh5co-header h1 {
-  font-size: 60px;
-  margin-bottom: 10px;
-  line-height: 1.5;
-  font-weight: normal;
-  color: #113468;
-  font-family: "Satisfy", Arial, serif;
 }
 @media screen and (max-width: 480px) {
   #fh5co-header h1 {
